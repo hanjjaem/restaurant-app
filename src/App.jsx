@@ -17,9 +17,9 @@ function App() {
     const randomCat = categories[Math.floor(Math.random() * categories.length)]
     const finalQuery = `${query} ${randomCat}`
 
-    // [현업 정석 방식] 우리 서버(3001번)에게 데이터 요청하기
-    // 이제 외부 프록시 사이트가 필요 없습니다!
-    const apiUrl = `http://localhost:3001/api/search`
+    // [현업 정석 방식] Vercel 서버리스 API로 데이터 요청하기
+    // 이제 localhost가 아닌 진짜 서버리스 백엔드를 찌릅니다!
+    const apiUrl = `/api/search`
 
     try {
       const response = await axios.get(apiUrl, {
